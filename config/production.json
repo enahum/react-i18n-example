@@ -1,0 +1,6 @@
+{
+  "port": 80,
+  "ssl": 443,
+  "enableSSL": false,
+  "host": "zbox.herokuapp.com"
+}

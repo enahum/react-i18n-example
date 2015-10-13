@@ -1,0 +1,12 @@
+{
+  "port": 80,
+  "ssl": 443,
+  "logLevel": 3,
+  "host": "zbox.herokuapp.com",
+  "sslSettings" : {
+    "enabled": false,
+    "key": null,
+    "cert": null,
+    "passphrase": null
+  }
+}
