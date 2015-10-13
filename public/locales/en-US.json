@@ -1,1 +1,0 @@
-{"notification_bar":{"new_tweets":"There {count, plural,\n =1 {is one new tweet!}\n other {are # new tweets!}\n}\n","view_tweets":"Click here to see {count, plural,\n =1 {it}\n other {them}\n}\n"}}

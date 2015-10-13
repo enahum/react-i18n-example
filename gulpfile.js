@@ -25,6 +25,7 @@ function string_src(filename, string) {
 gulp.task('minify', function() {
     gulp.src('./public/css/*')
         .pipe(gulpif('*.css', minifyCss({compatibility: 'ie8'})))
+        .pipe(concat('style.min.css'))
         .pipe(gulp.dest('./public/css/dist/'));
 
     return gulp.src('./app.js')

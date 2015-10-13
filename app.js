@@ -5,18 +5,24 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
     cookies = require('./cookies'),
-    TweetsApp = require('./components/TweetApp.jsx'),
-    Languages = require('./components/LanguageChange.jsx'),
     locale = navigator.language.split('-'),
     messages = require('./public/locales/*.json', {mode: 'hash'}),
     strings, initialState, intlData;
-window.cookies = cookies;
-
 
 locale = locale[1] ? `${locale[0]}-${locale[1].toUpperCase()}` : navigator.language;
 locale = cookies.read("lang") || document.documentElement.getAttribute('lang') || locale;
 strings = messages[locale] ? messages[locale] : messages['en-US'];
 strings = Object.assign(messages['en-US'], strings);
+
+if (!global.Intl) {
+    require('intl');
+    require('intl/locale-data/jsonp/en.js');
+}
+
+var TweetsApp = require('./components/TweetApp.jsx'),
+    Languages = require('./components/LanguageChange.jsx');
+
+window.cookies = cookies;
 
 // Snag the initial state that was passed from the server side
 initialState = JSON.parse(document.getElementById('initial-state').innerHTML);

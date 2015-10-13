@@ -4,7 +4,7 @@ var log = require('./log')(module);
 
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000, auto_reconnect: true } } };
 
-mongoose.connect(config.get('mongoose:uri'), options);
+mongoose.connect(process.env.MONGO_URL || config.get('mongoose:uri'), options);
 
 var db = mongoose.connection;
 var connected = false;

@@ -1,1 +1,0 @@
-{"notification_bar":{"new_tweets":"Hay {count, plural,\n =1 {un nuevo tweet!}\n other {# nuevos tweets!}\n}\n","view_tweets":"Click aquí para {count, plural, \n =1 {verlo}\n other {verlos}\n}\n"}}
